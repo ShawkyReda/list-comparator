@@ -1,0 +1,77 @@
+# Welcome message
+    print("This program checks if two lists have the same elements")
+    # First list input
+    first_list=[]
+
+    # Input numbers for the first list
+    print ("If you want to end your list input *")
+    while True:
+        num=input ("enter a number in first list")
+        if num=="*":
+             break
+        else:
+            temp=num
+            num=num.replace(".","",1)
+            while True:
+                if num.isdigit() or num[0]=="-" and num[1:].isdigit():
+                    num=float(num)
+                    num=float(temp)
+                    break
+                else:
+                    print("invailed number")
+                    num=input ("enter a number in first list")
+
+        first_list.append(num)
+        
+    first_list_len=len(first_list)
+    # Second list input
+    sec_list=[]
+    
+    # Input numbers for the second list       
+    print ("If you want to end your list input *")
+    while True :
+        num=input ("enter a number in second list")
+        if num=="*":
+             
+             break
+        else:
+            temp=num
+            num=num.replace(".","",1)
+            while True:
+                if num.isdigit() or num[0]=="-" and num[1:].isdigit():
+                    
+                    num=float(temp)
+                    break
+                else:
+                    print("invailed number")
+                    num=input ("enter a number in second list")
+        sec_list.append(num)
+        sec_list_len=len(sec_list)
+    #print(sec_list)
+    # Check if lengths of both lists are equal
+    if first_list_len!=sec_list_len:
+        print("lists are equal= False")
+    else:
+        # Check for common elements in the first list  
+        thr_list=[] 
+        for  i in first_list:
+            if  i  in sec_list:
+                thr_list.append(i)
+        # Check for common elements in the second list   
+        for_list=[] 
+        for  item in sec_list:
+            if  item  in first_list:
+                for_list.append(item)
+            # Calculate sums of elements in both lists
+            res=0    
+            for i in first_list:
+                    res=res+i
+            sum=0
+            for item in sec_list:
+                    sum=sum+item
+        # Check conditions for equality
+        if first_list==thr_list and sec_list==for_list and res==sum:
+                print("lists are equal= True")
+        else:
+            print("lists are equal= False")
+# Call the function
